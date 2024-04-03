@@ -9,9 +9,11 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Add the FetchContent module to download SFML
 include(FetchContent)
 set(SFML_LIB_NAME SFML)
 
+# Add the SFML library as a dependency
 FetchContent_Declare(
     ${SFML_LIB_NAME}
     GIT_REPOSITORY https://github.com/SFML/SFML.git
@@ -19,8 +21,11 @@ FetchContent_Declare(
     GIT_SHALLOW FALSE
 )
 
+# Ensures that the SFML library is downloaded and available
 FetchContent_MakeAvailable(${SFML_LIB_NAME})
 
+set(LIGHT_YEARS_ENGINE_TARGET_NAME LightYearsEngine)
 set(LIGHT_YEARS_GAME_TARGET_NAME LightYearsGame)
 
-add_subdirectory(LightYears)
+add_subdirectory(${LIGHT_YEARS_ENGINE_TARGET_NAME})
+add_subdirectory(${LIGHT_YEARS_GAME_TARGET_NAME})
