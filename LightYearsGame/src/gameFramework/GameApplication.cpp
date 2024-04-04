@@ -4,9 +4,9 @@
 #include "framework/World.h"
 #include <memory>
 
-ly::unique<ly::Application> GetApplication()
+std::unique_ptr<ly::Application> GetApplication()
 {
-	return std::make_unique<ly::GameApplication>();
+	return std::make_unique<ly::Application>();
 }
 
 ly::GameApplication::GameApplication()

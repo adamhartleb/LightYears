@@ -1,6 +1,6 @@
 #pragma once
 #include "framework/Application.h"
-#include <memory>
 #include "framework/Core.h"
+#include <memory>
 
-extern ly::unique<ly::Application> GetApplication();
+extern std::unique_ptr<ly::Application> GetApplication();

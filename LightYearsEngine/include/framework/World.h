@@ -1,6 +1,7 @@
 #pragma once
 #include "framework/Core.h"
 #include "framework/Application.h"
+#include <memory>
 
 namespace ly
 {
@@ -17,7 +18,7 @@ namespace ly
 	private:
 		void begin_play();
 		void tick(float delta_time);
-		shared<Application> m_owning_app;
+		std::shared_ptr<Application> m_owning_app;
 		bool m_begin_play;
 	};
 }
