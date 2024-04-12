@@ -5,9 +5,9 @@
 #include <iostream>
 #include <memory>
 
-std::unique_ptr<ly::Application> GetApplication()
+std::shared_ptr<ly::Application> GetApplication()
 {
-	return std::make_unique<ly::GameApplication>();
+	return std::make_shared<ly::GameApplication>();
 }
 
 namespace ly
@@ -15,11 +15,6 @@ namespace ly
 	GameApplication::GameApplication()
 	{
 		auto new_world{ load_world<World>() };
-	}
-
-	GameApplication::~GameApplication()
-	{
-		std::cout << "I got called!!!" << std::endl;
 	}
 }
 

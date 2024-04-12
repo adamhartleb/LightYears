@@ -10,6 +10,11 @@ ly::Application::Application()
 {
 }
 
+ly::Application::~Application()
+{
+	LOG("Why was i called?");
+}
+
 void ly::Application::run()												
 {
 	m_tick_clock.restart();
@@ -22,17 +27,9 @@ void ly::Application::run()
 		sf::Event window_event {};
 		while (m_window.pollEvent(window_event))
 		{
-			switch (window_event.type)
+			if (window_event.type == sf::Event::EventType::Closed)
 			{
-			case sf::Event::EventType::Closed:
 				m_window.close();
-				break;
-			case sf::Event::KeyPressed:
-				if (window_event.key.scancode == sf::Keyboard::Scan::Escape)
-				{
-					m_window.close();
-					break;
-				}
 			}
 		}
 

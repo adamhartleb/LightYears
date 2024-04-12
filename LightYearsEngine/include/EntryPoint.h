@@ -3,4 +3,4 @@
 #include "framework/Core.h"
 #include <memory>
 
-extern std::unique_ptr<ly::Application> GetApplication();
+extern std::shared_ptr<ly::Application> GetApplication();

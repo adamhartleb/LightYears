@@ -24,7 +24,7 @@ namespace ly
 	private:
 		void begin_play();
 		void tick(float delta_time);
-		std::shared_ptr<Application> m_owning_app;
+		Application* m_owning_app;
 		bool m_begin_play;
 
 		std::vector<std::shared_ptr<Actor>> m_actors;

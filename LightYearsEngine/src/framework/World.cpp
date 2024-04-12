@@ -4,7 +4,7 @@
 
 namespace ly
 {
-	World::World(Application* owning_app) 
+	World::World(Application* owning_app)
 		: m_owning_app{ owning_app }, m_begin_play{false},
 		m_actors{}, m_pending_actors{}
 	{	
@@ -45,6 +45,5 @@ namespace ly
 
 	World::~World()
 	{
-
 	}
 }

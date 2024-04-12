@@ -11,6 +11,7 @@ namespace ly
 	{
 	public:
 		Application();
+		~Application();
 		void run();
 
 		template<typename world_type>
