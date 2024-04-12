@@ -18,8 +18,7 @@ namespace ly
 
 		virtual ~World();
 
-		template<typename actor_type>
-		std::weak_ptr<actor_type> spawn_actor();
+		void spawn_actor();
 
 	private:
 		void begin_play();
@@ -27,15 +26,7 @@ namespace ly
 		Application* m_owning_app;
 		bool m_begin_play;
 
-		std::vector<std::shared_ptr<Actor>> m_actors;
-		std::vector<std::shared_ptr<Actor>> m_pending_actors;
+		std::vector<Actor*> m_actors{};
+		std::vector<Actor*> m_pending_actors{};
 	};
-
-	template<typename ActorType>
-	std::weak_ptr<ActorType> World::spawn_actor()
-	{
-		auto new_actor{ std::make_shared<ActorType>(this) };
-		m_pending_actors.push_back(new_actor);
-		return new_actor;
-	}
 }

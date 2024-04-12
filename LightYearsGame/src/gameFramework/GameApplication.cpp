@@ -5,16 +5,16 @@
 #include <iostream>
 #include <memory>
 
-std::shared_ptr<ly::Application> GetApplication()
+ly::Application* GetApplication()
 {
-	return std::make_shared<ly::GameApplication>();
+	return new ly::GameApplication{};
 }
 
 namespace ly
 {
 	GameApplication::GameApplication()
 	{
-		auto new_world{ load_world<World>() };
+		load_world();
 	}
 }
 

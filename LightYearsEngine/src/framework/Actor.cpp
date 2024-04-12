@@ -4,7 +4,7 @@
 
 namespace ly
 {
-	Actor::Actor(std::shared_ptr<World> owning_world)
+	Actor::Actor(World* owning_world)
 		: m_owning_world { owning_world }, m_begun_play { false }
 	{
 	}
