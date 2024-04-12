@@ -14,7 +14,7 @@ namespace ly
 		void run();
 
 		template<typename world_type>
-		std::shared_ptr<world_type> load_world();
+		std::weak_ptr<world_type> load_world();
 	private:
 		void tick_internal(float delta_time);
 		void render_internal();
@@ -28,9 +28,9 @@ namespace ly
 		std::shared_ptr<World> m_current_world;
 	};
 	template<typename world_type>
-	std::shared_ptr<world_type> Application::load_world()
+	std::weak_ptr<world_type> Application::load_world()
 	{
-		auto new_world = std::make_shared<world_type>(this);
+		auto new_world{ std::make_shared<world_type>(this) };
 		m_current_world = new_world;
 		return new_world;
 	}

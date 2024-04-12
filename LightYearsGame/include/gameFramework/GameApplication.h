@@ -8,5 +8,6 @@ namespace ly
 	{
 	public:
 		GameApplication();
+		~GameApplication();
 	};
 }

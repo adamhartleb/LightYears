@@ -1,15 +1,25 @@
 #include "gameFramework/GameApplication.h"
 #include "framework/Core.h"
-#include "framework/Application.h"
 #include "framework/World.h"
+#include "framework/Application.h"
+#include <iostream>
 #include <memory>
 
 std::unique_ptr<ly::Application> GetApplication()
 {
-	return std::make_unique<ly::Application>();
+	return std::make_unique<ly::GameApplication>();
 }
 
-ly::GameApplication::GameApplication()
+namespace ly
 {
-	ly::Application::load_world<World>();
+	GameApplication::GameApplication()
+	{
+		auto new_world{ load_world<World>() };
+	}
+
+	GameApplication::~GameApplication()
+	{
+		std::cout << "I got called!!!" << std::endl;
+	}
 }
+

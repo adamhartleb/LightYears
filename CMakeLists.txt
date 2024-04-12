@@ -29,3 +29,5 @@ set(LIGHT_YEARS_GAME_TARGET_NAME LightYearsGame)
 
 add_subdirectory(${LIGHT_YEARS_ENGINE_TARGET_NAME})
 add_subdirectory(${LIGHT_YEARS_GAME_TARGET_NAME})
+
+

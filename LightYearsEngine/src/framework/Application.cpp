@@ -13,8 +13,8 @@ ly::Application::Application()
 void ly::Application::run()												
 {
 	m_tick_clock.restart();
-	const float delta_time{ 1.f / m_target_frame_rate };
-	float accumulated_time{ 0.f };
+	const auto delta_time{ 1.f / m_target_frame_rate };
+	auto accumulated_time{ 0.f };
 
 
 	while (m_window.isOpen())
@@ -79,5 +79,5 @@ void ly::Application::render()
 
 void ly::Application::tick(float delta_time)
 {
-	LOG("ticking at frame rate: %f", 1.f / delta_time);
+	/*LOG("ticking at frame rate: %f", 1.f / delta_time);*/
 }
